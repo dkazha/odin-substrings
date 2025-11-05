@@ -1,7 +1,13 @@
+dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
+
 def substrings(str, dictionary)
-  # Turn the string into an array using the appropriate method
-  # Iterate over the array and check to see if every word in the dictionary is in every word of the array
-  # Use the reduce method and add a new hash as the initial value for the accumulator
-  # If it is in the dictionary - add it to the hash and add 1 to a counter
-  # Return the hash
+  found_substrings = Hash.new(0)
+  dictionary.each do |word|
+    if str.include? word
+      found_substrings[word] += 1
+    end
+  end
+  found_substrings
 end
+
+p substrings("below", dictionary)
